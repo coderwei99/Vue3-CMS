@@ -14,6 +14,7 @@ export default defineComponent({
   name: 'App'
 })
 </script>
+
 <style lang="less">
 #nav {
   height: 100%;

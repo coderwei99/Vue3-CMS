@@ -17,11 +17,13 @@ import 'element-plus/theme-chalk/index.css'
 
 import './serivice/index'
 // import hyRequest from './serivice/index'
+
+import { setupStore } from './store'
+setupStore()
 const app = createApp(App)
 // registerApp(app)
 
 app.use(store).use(router).use(ElementPlus).mount('#app')
-
 // interface DataType {
 //   data: any
 //   returnCode: string
