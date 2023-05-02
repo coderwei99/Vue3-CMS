@@ -43,7 +43,7 @@ class HYRequest {
     // 全局拦截器先执行，实例拦截器后执行
     this.instance.interceptors.request.use(
       (config) => {
-        // console.log('全局拦截器：请求成功拦截器')
+        console.log('全局拦截器：请求成功拦截器')
         if (this.showLoading) {
           this.loading = ElLoading.service({
             lock: true,
@@ -54,20 +54,20 @@ class HYRequest {
         return config
       },
       (err) => {
-        // console.log('全局拦截器：请求失败拦截器')
+        console.log('全局拦截器：请求失败拦截器')
         return err
       }
     )
     this.instance.interceptors.response.use(
       (res) => {
-        // console.log('全局拦截器：响应成功拦截器')
+        console.log('全局拦截器：响应成功拦截器')
 
         // 移除loading
         this.loading?.close()
         return res.data
       },
       (err) => {
-        // console.log('全局拦截器：请求失败拦截器')
+        console.log('全局拦截器：请求失败拦截器')
         this.loading?.close()
         return err
       }
